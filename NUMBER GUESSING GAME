@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdlib>
+
+
+int main() {
+    srand(time(0)); // CODSOFT
+
+    int Number = rand() % 100 + 1; 
+    int maxChances = 'INT_MAX'; 
+
+    std::cout << "Welcome to the Number Guessing Game!" << std::endl;
+    std::cout << "The number picked is between 1 and 100." << std::endl;
+
+    int guess;
+    for (int chances = 1; chances <= maxChances; ++chances) {
+        std::cout << "Guess No." << chances << ": ";
+        std::cin >> guess;
+
+        if (guess == Number) {
+            std::cout << "Congratulations! You guessed it." << std::endl;
+            break;
+        } else if (guess < Number) {
+            std::cout << "Too low. Try again!" << std::endl;
+        } else {
+            std::cout << "Too high. Try again!" << std::endl;
+        }
+    }
+
+    std::cout << "The Choosen number is :"<<Number<< std::endl;
+    std::cout << "Thanks for playing the game !" << std::endl;
+
+    return 0;
+}
